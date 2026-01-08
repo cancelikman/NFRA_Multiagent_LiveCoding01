@@ -1,0 +1,68 @@
+create_research_plan:
+  description: |
+    Kullanıcıdan gelen "{user_query}" sorgusunu derinlemesine analiz et. Bu sorguyu,
+    takımdaki diğer ajanların (Event Researcher ve Research Agent) en verimli şekilde
+    çalışabilmesi için iki ana operasyonel kola ayır.
+
+    1) Etkinlik Araştırması Stratejisi
+    Konuyla ilgili yaklaşan konferanslar, webinarlar, hackathonlar veya zirveleri bulmak için
+    gerekli anahtar kelimeleri, tarih aralıklarını ve platform önerilerini belirle.
+
+    2) İçerik/Makale Araştırması Stratejisi
+    Konuyla ilgili teknik makaleler, son dakika haberleri, GitHub repoları veya blog yazılarını (medium.com)
+    bulmak için araştırılması gereken alt başlıkları, teknik terimleri ve yanıtlanması gereken kritik soruları belirle.
+
+    Amacın, karmaşık bir sorguyu, uygulayıcı ajanlar için adım adım izlenebilir,
+    net ve ayrıştırılmış bir yol haritasına dönüştürmektir.
+
+  expected_output: |
+    Aşağıdaki bölümleri içeren, net ve yapılandırılmış bir araştırma planı belgesi:
+
+    1. [Event Researcher İçin Yönergeler]
+       - Kullanılacak spesifik arama terimleri (keywords).
+       - Odaklanılması gereken etkinlik türleri (Global/Yerel, Online/Fiziksel).
+       - Varsa tarih veya bölge kısıtlamaları.
+
+    2. [Research Agent İçin Yönergeler]
+       - Araştırılacak temel alt başlıklar ve konular.
+       - Yanıtlanması gereken kilit sorular (Key Questions).
+       - Kullanılacak teknik anahtar kelimeler ve jargonlar.
+
+    3. [Başarı Kriterleri]
+       - Toplanan bilgilerin güncelliği ve güvenilirliği için filtreleme kuralları.
+
+event_research_data:
+  description: |
+    Research Planner tarafından sağlanan etkinlik araştırma planını takip et.
+    İnternet arama araçlarını kullanarak "{user_query}" konusuyla ilgili yaklaşan
+    konferansları, webinarları, zirveleri ve topluluk buluşmalarını (meetups) tara.
+
+    Kritik Kurallar
+    1. Sadece GELECEK tarihli etkinlikleri listele (geçmiş etkinlikleri filtrele).
+    2. Resmi etkinlik sayfalarını veya güvenilir biletleme platformlarını (Luma, Eventbrite, Meetup vb.) kaynak olarak kullan.
+    3. Her etkinliğin tarihini, saatini ve katılım yöntemini (Online/Fiziksel) mutlaka doğrula.
+    4. Her fiziksel etkinliğin İstanbul’da olmasına dikkat et.
+
+  expected_output: |
+    Bulunan her etkinlik için aşağıdaki formatta yapılandırılmış, doğrulanmış bir Etkinlik Listesi:
+
+    1. Etkinlik Başlığı
+       [Tam Adı]
+    2. Tarih ve Saat
+       [Gün/Ay/Yıl - Saat]
+    3. Tür ve Konum
+       [Online / Fiziksel - Şehir/Platform]
+    4. Özet
+       [Etkinliğin amacı ve hedef kitlesi hakkında 1-2 cümle]
+    5. Kayıt/Detay Linki
+       [Doğrudan erişim URL'i]
+
+    (Eğer yaklaşan, doğrulanmış bir etkinlik bulunamazsa, bu durum net bir şekilde belirtilmelidir.)
+
+research_content:
+  description: |
+    Research Planner tarafından sağlanan "İçerik/Makale Araştırması Stratejisini" adım adım uygula.
+    "{user_query}" konusundaki en son gelişmeleri, teknik atılımları ve sektör haberlerini derinlemesine tara.
+
+    Öncelikli Kaynaklar ve Filtreleme:
+    1. Akademik ve Teknik: arXiv, Google Scholar, GitHub Trending (Pa
